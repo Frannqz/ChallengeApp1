@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
     return SplashView(
       backgroundColor: Color.fromRGBO(253, 69, 86, 1),
       logo: Image.asset(
-          "images/valo_logo.png"), // Ruta relativa a la carpeta de assets
+          "images/text_logo.png"), // Ruta relativa a la carpeta de assets
       done: Done(const HomePage(),
           animationDuration: const Duration(milliseconds: 300)),
     );
