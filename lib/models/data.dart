@@ -13,7 +13,7 @@ final listAgents = [
   Agents(
       'Reyna',
       'México',
-      'Forjada en el corazón de México, Reyna domina el combate singular y destaca con cada muerte que logra. Su capacidad sólo está limitada por su habilidad bruta, lo que la hace muy dependiente del rendimiento.',
+      'Forjada en el corazón de México, Reyna domina el combate singular y destaca con cada muerte que logra.',
       [ImageAgents('images/agents/reyna.png')],
       'Duelistas'),
   Agents(

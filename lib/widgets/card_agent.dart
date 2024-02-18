@@ -58,9 +58,12 @@ class CardAgents extends StatelessWidget {
                 style: GoogleFonts.ubuntu(color: Colors.white),
               ),
             ),
-            Text(
-              agents.description,
-              style: GoogleFonts.ubuntu(color: Colors.white),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 30.0),
+              child: Text(
+                agents.description,
+                style: GoogleFonts.ubuntu(color: Colors.white, fontSize: 13.0),
+              ),
             ),
           ],
         ),

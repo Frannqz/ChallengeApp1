@@ -49,20 +49,18 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           _buildRolesNavigation(size),
-          // Padding(
-          //   padding: EdgeInsets.only(top: size.height * 0.3),
-          //   child: Text(
-          //     "${listRoles[current]} Tab Content",
-          //     style: GoogleFonts.ubuntu(fontSize: 30),
-          //   ),
-          // ),
           Center(
             child: _bodyAgent(context: context),
           ),
           const SizedBox(height: 15), // Espacio entre cardBodyAgent y logo
-          Image.asset(
-            'images/logo.png',
-            width: 150,
+          GestureDetector(
+            onTap: () {
+              _mostrarInfoFranco(context);
+            },
+            child: Image.asset(
+              'images/logo.png',
+              width: 150,
+            ),
           ),
         ],
       ),
@@ -113,7 +111,8 @@ class _HomePageState extends State<HomePage> {
       itemCount: listRoles.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.only(left: index == 0 ? 10 : 23, top: 7),
+          //Manipular el menu de roles
+          padding: EdgeInsets.only(left: index == 0 ? 35 : 25, top: 7),
           child: GestureDetector(
             onTap: () {
               setState(() {
@@ -141,13 +140,13 @@ class _HomePageState extends State<HomePage> {
   double _changePositionedOfLine() {
     switch (current) {
       case 0:
-        return 0;
+        return 25;
       case 1:
-        return 80;
+        return 100;
       case 2:
-        return 175;
+        return 190;
       case 3:
-        return 290;
+        return 300;
       default:
         return 0;
     }
@@ -157,19 +156,40 @@ class _HomePageState extends State<HomePage> {
   double _changeContainerWidth() {
     switch (current) {
       case 0:
-        return 70;
+        return 65;
       case 1:
-        return 83;
+        return 77;
       case 2:
-        return 106;
+        return 99;
       case 3:
-        return 80;
+        return 70;
       default:
         return 0;
     }
   }
 
-  _bodyAgent({required BuildContext context}) {
+  _mostrarInfoFranco(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Desarrollada por Frannqz"),
+          content: const Text(
+              "Aplicación para conocer personajes del videojuego de Riot Games: Valorant."),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("Cerrar"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _bodyAgent({required BuildContext context}) {
     // Filtrar la lista de agentes por el rol seleccionado
     List<Agents> filteredAgents =
         listAgents.where((agent) => agent.role == listRoles[current]).toList();
