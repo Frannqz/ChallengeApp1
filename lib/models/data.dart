@@ -76,4 +76,70 @@ final listAgents = [
       'Proveniente de la costa de la India, Harbour irrumpe en el campo blandiendo tecnología antigua y dominando el agua. Desata rápidos espumosos y olas aplastantes para proteger a sus aliados o golpear a quienes se le oponen.',
       [ImageAgents('images/agents/harbor.png')],
       'Controladores'),
+  Agents(
+      'Sage',
+      'China',
+      'Sage, bastión de China, crea seguridad para ella y su equipo dondequiera que vaya. Capaz de revivir a amigos caídos y evitar ataques contundentes, proporciona un centro de calma en un campo de batalla infernal.',
+      [ImageAgents('images/agents/sage.png')],
+      'Centinelas'),
+  Agents(
+      'Cypher',
+      'Marruecos',
+      'Cypher, el intermediario de información marroquí, es una red de vigilancia unipersonal que vigila cada movimiento del enemigo. Ningún secreto está a salvo. Ninguna maniobra pasa desapercibida. Cypher siempre está mirando.',
+      [ImageAgents('images/agents/cypher.png')],
+      'Centinelas'),
+  Agents(
+      'Chamber',
+      'Francia',
+      'Bien vestido y bien armado, el diseñador de armas francés Chamber expulsa a los agresores con una precisión mortal. Aprovecha su arsenal personalizado para mantener la línea y eliminar enemigos desde lejos, con una contingencia creada para cada plan.',
+      [ImageAgents('images/agents/chamber.png')],
+      'Centinelas'),
+  Agents(
+      'Deadlock',
+      'Noruega',
+      'La agente noruega Deadlock despliega una serie de nanocables de última generación para proteger el campo de batalla incluso del asalto más letal. Nadie escapa a su vigilante vigilancia ni sobrevive a su inquebrantable ferocidad.',
+      [ImageAgents('images/agents/deadlock.png')],
+      'Centinelas'),
+  Agents(
+      'Killjoy',
+      'Alemania',
+      'Killjoy, el genio de Alemania, asegura sin esfuerzo posiciones clave en el campo de batalla con su arsenal de inventos. Si su daño no elimina a sus enemigos, la desventaja que brindan sus robots los acabará rápidamente.',
+      [ImageAgents('images/agents/killjoy.png')],
+      'Centinelas'),
+  Agents(
+      'Sova',
+      'Rusia',
+      'Nacido del eterno invierno de la tundra rusa, Sova rastrea, encuentra y elimina enemigos con despiadada eficiencia y precisión. Su arco personalizado y sus increíbles habilidades de exploración garantizan que incluso si corres, no podrás esconderte.',
+      [ImageAgents('images/agents/sova.png')],
+      'Iniciadores'),
+  Agents(
+      'Breach',
+      'Suecia',
+      'El biónico Breach dispara poderosas ráfagas cinéticas dirigidas para despejar agresivamente un camino a través del terreno enemigo. El daño y los trastornos que inflige garantizan que ninguna pelea sea justa.',
+      [ImageAgents('images/agents/breach.png')],
+      'Iniciadores'),
+  Agents(
+      'Fade',
+      'Turquia',
+      'La cazarrecompensas turca Fade desata el poder de la cruda pesadilla para apoderarse de los secretos del enemigo. En sintonía con el terror mismo, caza objetivos y revela sus miedos más profundos antes de aplastarlos en la oscuridad.',
+      [ImageAgents('images/agents/fade.png')],
+      'Iniciadores'),
+  Agents(
+      'Gekko',
+      'U.S.A',
+      'Gekko el Angeleno lidera un grupo muy unido de criaturas calamitosas. Sus amigos se lanzaron hacia adelante, dispersando a los enemigos fuera del camino, con Gekko persiguiéndolos para reagruparse y regresar.',
+      [ImageAgents('images/agents/gekko.png')],
+      'Iniciadores'),
+  Agents(
+      'Kay/o',
+      'Robot',
+      'KAY/O es una máquina de guerra construida con un único propósito: neutralizar los radiantes. Su poder para suprimir las habilidades enemigas desmantela la capacidad de sus oponentes para defenderse, asegurándoles a él y a sus aliados la ventaja definitiva.',
+      [ImageAgents('images/agents/kayo.png')],
+      'Iniciadores'),
+  Agents(
+      'Skye',
+      'Australia',
+      'Originaria de Australia, Skye y su banda de bestias abren camino a través de territorio hostil. Con sus creaciones obstaculizando al enemigo y su poder para curar a otros, el equipo es más fuerte y más seguro al lado de Skye.',
+      [ImageAgents('images/agents/skye.png')],
+      'Iniciadores')
 ];
