@@ -1,3 +1,4 @@
+import 'package:challenge/models/agents.dart';
 import 'package:challenge/models/data.dart';
 import 'package:challenge/widgets/card_agent.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,13 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           _buildRolesNavigation(size),
+          // Padding(
+          //   padding: EdgeInsets.only(top: size.height * 0.3),
+          //   child: Text(
+          //     "${listRoles[current]} Tab Content",
+          //     style: GoogleFonts.ubuntu(fontSize: 30),
+          //   ),
+          // ),
           Center(
             child: _bodyAgent(context: context),
           ),
@@ -161,17 +169,26 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  _bodyAgent({required BuildContext context}) => Container(
-        width: MediaQuery.of(context).size.width * 1,
-        height: MediaQuery.of(context).size.height * 0.66,
-        child: PageView.builder(
-          controller: PageController(viewportFraction: 0.9),
-          itemCount: 4,
-          itemBuilder: (_, index) {
-            return CardAgents(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.8);
-          },
-        ),
-      );
+  _bodyAgent({required BuildContext context}) {
+    // Filtrar la lista de agentes por el rol seleccionado
+    List<Agents> filteredAgents =
+        listAgents.where((agent) => agent.role == listRoles[current]).toList();
+
+    return Container(
+      width: MediaQuery.of(context).size.width * 1,
+      height: MediaQuery.of(context).size.height * 0.66,
+      child: PageView.builder(
+        controller: PageController(viewportFraction: 0.9),
+        itemCount: filteredAgents.length,
+        itemBuilder: (_, index) {
+          return CardAgents(
+            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.height * 0.8,
+            agents: filteredAgents[
+                index], // Pasar el agente correspondiente al widget CardAgents
+          );
+        },
+      ),
+    );
+  }
 }

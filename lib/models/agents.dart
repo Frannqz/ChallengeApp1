@@ -4,9 +4,10 @@ class ImageAgents {
 }
 
 class Agents {
-  Agents(this.name, this.country, this.description, this.listAgents);
+  Agents(this.name, this.country, this.description, this.listAgents, this.role);
   final String name;
   final String country;
   final String description;
   final List<ImageAgents> listAgents;
+  final String role;
 }
