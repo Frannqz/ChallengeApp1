@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashView(
-      backgroundColor: Color.fromRGBO(253, 69, 86, 1),
+      backgroundColor: const Color.fromRGBO(253, 69, 86, 1),
       logo: Image.asset(
           "images/text_logo.png"), // Ruta relativa a la carpeta de assets
       done: Done(const HomePage(),

@@ -1,5 +1,4 @@
 import 'package:challenge/models/data.dart';
-import 'package:challenge/pages/details_agent.dart';
 import 'package:challenge/widgets/card_agent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +31,8 @@ class _HomePageState extends State<HomePage> {
             "Valorant Agents",
             style: GoogleFonts.novaSquare(
               fontSize: 27,
-              fontWeight: FontWeight.w500,
+              color: const Color.fromRGBO(189, 57, 68, 1),
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           Center(
             child: _bodyAgent(context: context),
           ),
-          const SizedBox(height: 25), // Espacio entre cardBodyAgent y la imagen
+          const SizedBox(height: 15), // Espacio entre cardBodyAgent y logo
           Image.asset(
             'images/logo.png',
             width: 150,
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildRolesNavigation(Size size) {
     return Container(
-      margin: const EdgeInsets.only(top: 25, bottom: 20),
+      margin: const EdgeInsets.only(top: 25, bottom: 15),
       width: size.width,
       height: size.height * 0.06,
       child: Stack(
@@ -162,10 +162,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   _bodyAgent({required BuildContext context}) => Container(
-        height: MediaQuery.of(context).size.height * 0.65,
-        child: CardAgents(
-          width: MediaQuery.of(context).size.width * 0.92,
-          height: 40,
+        width: MediaQuery.of(context).size.width * 1,
+        height: MediaQuery.of(context).size.height * 0.66,
+        child: PageView.builder(
+          controller: PageController(viewportFraction: 0.9),
+          itemCount: 4,
+          itemBuilder: (_, index) {
+            return CardAgents(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.8);
+          },
         ),
       );
 }
