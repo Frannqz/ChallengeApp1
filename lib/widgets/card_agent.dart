@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CardAgents extends StatelessWidget {
   final double width;
   final double height;
-  final Agents agents; // Nuevo parámetro
+  final Agents agents;
 
   const CardAgents({
     Key? key,
@@ -21,13 +21,13 @@ class CardAgents extends StatelessWidget {
       width: width == null ? 200 : width,
       height: height == null ? 300 : height,
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(54, 73, 102, 1),
+        color: const Color.fromRGBO(54, 73, 102, 1), //Color fondo de card
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black12.withOpacity(0.3),
-            blurRadius: 05,
-            spreadRadius: 03,
+            color: Colors.black12.withOpacity(0.3), //Color de sombra
+            blurRadius: 05, //Radio desenfoque
+            spreadRadius: 03, //Expansion de sombra
           )
         ],
       ),
@@ -40,7 +40,7 @@ class CardAgents extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
               child: Text(
-                agents.name.toUpperCase(),
+                agents.name.toUpperCase(), //Nombre agente en mayus
                 style: GoogleFonts.novaSquare(
                   color: Colors.white,
                   fontSize: 30.0,

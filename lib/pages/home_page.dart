@@ -70,8 +70,8 @@ class _HomePageState extends State<HomePage> {
   Widget _buildRolesNavigation(Size size) {
     return Container(
       margin: const EdgeInsets.only(top: 25, bottom: 15),
-      width: size.width,
-      height: size.height * 0.06,
+      width: size.width, //Ancho = ancho de dispositivo
+      height: size.height * 0.06, //Altura proporcional al alto de dispositivo
       child: Stack(
         children: [
           Positioned(
@@ -82,9 +82,10 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           AnimatedPositioned(
+            //Posicionamiento animado de linea roja
             curve: Curves.fastLinearToSlowEaseIn,
-            bottom: 12,
-            left: _changePositionedOfLine(),
+            bottom: 12, //Distancia desde la parte inferior
+            left: _changePositionedOfLine(), //Posición horizontal de línea
             duration: const Duration(milliseconds: 500),
             child: AnimatedContainer(
               //Linea roja
@@ -106,13 +107,15 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildRolesList(Size size) {
     return ListView.builder(
-      physics: const BouncingScrollPhysics(),
+      //Constructor de la lista de roles
+      physics: const BouncingScrollPhysics(), //Desplazamiento de rebote
       scrollDirection: Axis.horizontal,
-      itemCount: listRoles.length,
+      itemCount: listRoles.length, //No total de roles
       itemBuilder: (context, index) {
         return Padding(
           //Manipular el menu de roles
-          padding: EdgeInsets.only(left: index == 0 ? 35 : 25, top: 7),
+          padding: EdgeInsets.only(
+              left: index == 0 ? 35 : 25, top: 7), //Espaciado entre elementos
           child: GestureDetector(
             onTap: () {
               setState(() {
@@ -120,7 +123,8 @@ class _HomePageState extends State<HomePage> {
               });
             },
             child: Text(
-              listRoles[index],
+              //Mostrar el rol
+              listRoles[index], //Recorre los nombres
               style: GoogleFonts.ubuntu(
                 fontSize: current == index ? 16 : 14,
                 fontWeight:
@@ -202,8 +206,8 @@ class _HomePageState extends State<HomePage> {
         itemCount: filteredAgents.length,
         itemBuilder: (_, index) {
           return CardAgents(
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.height * 0.8,
+            width: MediaQuery.of(context).size.width * 0.8, //Ancho de la card
+            height: MediaQuery.of(context).size.height * 0.8, //Alto de la card
             agents: filteredAgents[
                 index], // Pasar el agente correspondiente al widget CardAgents
           );
